@@ -60,7 +60,7 @@ export const getAllPosts = async () => {
   });
 };
 
-const getPageMetaData = (post:PostPage) => {
+const getPageMetaData = (post:any) => {
   const description = post.properties.概要.rich_text[0];
   return {
     id: post.id,
