@@ -5,12 +5,21 @@ import NavSP from "../parts/header/NavSP";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const closeMenu = () => setIsOpen(false);
-  const handleStateChange = (state: { isOpen: boolean }) => {
-    if (state.isOpen) {
+  const closeMenu = () => {
+    setIsOpen(false);
+    document.body.style.overflow = "auto"; 
+  };
+  const handleStateChange = (state:{isOpen: boolean}) => {
+    if (state.isOpen && !isOpen) {
       window.scrollTo({ top: 0, behavior: "smooth" });
+      setIsOpen(true);
+      document.body.style.overflow = "hidden"; 
+    } else {
+      setIsOpen(state.isOpen);
+      if (!state.isOpen) {
+        document.body.style.overflow = "auto";
+      }
     }
-    setIsOpen(state.isOpen);
   };
   return (
     <nav
