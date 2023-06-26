@@ -45,13 +45,13 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 
 export default function Post({ post }: { post: Post }) {
   return (
-    <section className="container px-2 h-900 lg:w-4/5 mx-auto mt-20">
+    <section className="container px-5 h-900 lg:w-4/5 mx-auto mt-20">
       <CustomHead
         title={post.metadata.title}
         description={post.metadata.description}
       />
       <div className="lg:flex lg:w-10/12 mx-auto justify-evenly">
-        <div className="lg:w-9/12 mr-5">
+        <div className="lg:w-9/12 lg:mr-5">
           <h2 className="w-full text-xl font-meduium">{post.metadata.title}</h2>
           <div className="border-b-2 w-1/3 mt-1 border-sky-900"></div>
           <span className="text-gray-500">投稿日：{post.metadata.date}</span>
