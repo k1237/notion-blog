@@ -67,7 +67,7 @@ const getPageMetaData = (post:any) => {
     title: post.properties.名前.title[0].plain_text,
     description: description ? description.plain_text : '',
     date: post.properties.日付.date.start,
-    tags: post.properties.タグ.multi_select.map((tag) => tag.name),
+    tags: post.properties.タグ.multi_select.map((tag:any) => tag.name),
     slug: post.properties.スラッグ.rich_text[0].plain_text,
   };
 };
