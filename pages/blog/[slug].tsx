@@ -20,7 +20,7 @@ interface Post {
   markdown: {
     parent: string;
   };
-};
+}
 
 export const getStaticPaths = async () => {
   const allPosts = await getAllPosts();
@@ -68,7 +68,6 @@ export default function Post({ post }: { post: Post }) {
 
           <div id={styles.slug} className="mt-10 font-medium">
             <ReactMarkdown
-              children={post.markdown.parent}
               components={{
                 code({ node, inline, className, children }) {
                   const match = /language-(\w+)/.exec(className || "");
@@ -80,11 +79,13 @@ export default function Post({ post }: { post: Post }) {
                       PreTag="div"
                     />
                   ) : (
-                    <code >{children}</code>
+                    <code>{children}</code>
                   );
                 },
               }}
-            />
+            >
+              {post.markdown.parent}
+            </ReactMarkdown>
           </div>
           <Link href="/blog/page/1">
             <span className="pb-20 block mt-10">←戻る</span>
