@@ -13,7 +13,7 @@ export default function Portfolio() {
         id={styles.portfolio}
         className="container w-10/12 mt-16 mx-auto h-900"
       >
-        <h1 className="text-4xl font-bold text-center">PORTFOLIO</h1>
+        <h2 className="text-title text-shadow-black">PORTFOLIO</h2>
         <Main/>
       </main>
     </div>

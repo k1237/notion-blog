@@ -11,7 +11,7 @@ export default function Main() {
         >
           <Image src="/img/memoto.png" alt="memoto" width={1280} height={720} />
         </a>
-        <div className="w-96 lg:w-full mx-auto p-5 my-5">
+        <div className="w-full p-2 lg:p-5 mx-auto my-5">
           <h3 className="font-bold">memoto</h3>
           <hr />
           <p>楽器練習用に曲とプレイリストを保存できるアプリ</p>
@@ -47,7 +47,7 @@ export default function Main() {
             height={720}
           />
         </a>
-        <div className="w-96 lg:w-full mx-auto p-5 my-5">
+        <div className="w-full p-2 lg:p-5 mx-auto my-5">
           <h3 className="font-bold">オートチャット</h3>
           <hr />
           <p>

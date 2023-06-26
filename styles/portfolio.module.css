@@ -1,12 +1,11 @@
-
-#portfolio img{
-    object-fit:cover;
-    width:350px;
-    height:250px;
-    filter: drop-shadow(5px 5px 5px #aaa);
-    transition: transform 0.3s ease-in-out; 
+#portfolio img {
+  object-fit: cover;
+  width: 350px;
+  height: 250px;
+  filter: drop-shadow(5px 5px 5px #aaa);
+  transition: transform 0.3s ease-in-out;
 }
 
 #portfolio img:hover {
-    transform: scale(0.95); 
+  transform: scale(0.95);
 }

@@ -45,7 +45,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 
 export default function Post({ post }: { post: Post }) {
   return (
-    <section className="container lg:px-2 px-5 h-900 lg:w-4/5 mx-auto mt-20">
+    <section className="container px-2 h-900 lg:w-4/5 mx-auto mt-20">
       <CustomHead
         title={post.metadata.title}
         description={post.metadata.description}

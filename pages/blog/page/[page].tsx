@@ -58,7 +58,7 @@ export default function BlogPageList({
         description="ブログページです。"
       />
       <main className="container w-full mt-16 mx-auto h-900">
-        <h1 className="text-4xl font-bold text-center">BLOG</h1>
+        <h2 className="text-title text-shadow-black">BLOG</h2>
         <div className="lg:flex lg:w-9/12 mx-auto">
           <div className="lg:w-8/12">
             {paginatedPosts.map((post) => (

@@ -10,7 +10,7 @@ export default function Home() {
         description="プロフィールページです。"
       />
       <main className="container w-full mt-16 mx-auto h-900">
-        <h1 className="text-4xl font-bold text-center">PROFILE</h1>
+        <h2 className="text-title text-shadow-black">PROFILE</h2>
         <MainPC/>
         <MainSP/>
       </main>
