@@ -70,20 +70,17 @@ export default function Post({ post }: { post: Post }) {
             <ReactMarkdown
               children={post.markdown.parent}
               components={{
-                code({ node, inline, className, children, ...props }) {
+                code({ node, inline, className, children }) {
                   const match = /language-(\w+)/.exec(className || "");
                   return !inline && match ? (
                     <SyntaxHighlighter
-                      {...props}
                       children={String(children).replace(/\n$/, "")}
                       style={dracula}
                       language={match[1]}
                       PreTag="div"
                     />
                   ) : (
-                    <code {...props} className={className}>
-                      {children}
-                    </code>
+                    <code >{children}</code>
                   );
                 },
               }}
