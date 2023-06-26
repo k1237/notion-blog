@@ -1,0 +1,26 @@
+@media (max-width: 1024px) {
+  #career_pc {
+    display: none;
+  }
+}
+#career_pc img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+#career_sp {
+  display: none;
+}
+
+#career_sp img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  #career_sp {
+    display: block;
+  }
+}

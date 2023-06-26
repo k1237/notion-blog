@@ -1,0 +1,19 @@
+#slug h2{
+  margin-top: 10%;
+}
+
+#slug h3{
+    margin-top: 5%;
+}
+
+#slug a{
+    color:#3c82f6;
+}
+
+#slug a:hover{
+    color:#7dd3fc;
+}
+
+#slug pre{
+    margin-top:3%;
+}
