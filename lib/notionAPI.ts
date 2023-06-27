@@ -14,9 +14,9 @@ export const getAllPosts = async () => {
   if (!apiUrl) {
     throw new Error('NEXT_PUBLIC_API_URL is not defined');
   }
+  console.log('NEXT_PUBLIC_API_URL:', apiUrl);
   const response = await fetch(apiUrl);
   const allPosts = await response.json();
-
   return allPosts
 }
 
