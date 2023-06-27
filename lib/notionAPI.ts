@@ -10,15 +10,35 @@ const notion = new Client({
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
 export const getAllPosts = async () => {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  if (!apiUrl) {
-    throw new Error('NEXT_PUBLIC_API_URL is not defined');
+  const databaseId = process.env.NOTION_DATABASE_ID;
+
+  if (!databaseId) {
+    throw new Error("Environment variable NOTION_DATABASE_ID must be defined");
   }
-  console.log('NEXT_PUBLIC_API_URL:', apiUrl);
-  const response = await fetch(apiUrl);
-  const allPosts = await response.json();
-  return allPosts
-}
+
+  const posts = await notion.databases.query({
+    database_id: databaseId,
+    page_size: 100,
+    filter: {
+      property: "公開",
+      checkbox: {
+        equals: true,
+      },
+    },
+    sorts: [
+      {
+        property: "日付",
+        direction: "descending",
+      },
+    ],
+  });
+
+  const allPosts = posts.results;
+
+  return allPosts.map((post) => {
+    return getPageMetaData(post);
+  });
+};
 
 const getPageMetaData = (post:any) => {
   const description = post.properties.概要.rich_text[0];
