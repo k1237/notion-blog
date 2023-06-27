@@ -24,7 +24,7 @@ interface Post {
 
 export const getStaticPaths = async () => {
   const allPosts = await getAllPosts();
-  const paths = allPosts.map(({ slug }) => ({ params: { slug } }));
+  const paths = allPosts.map(({ slug }: { slug: string }) => ({ params: { slug } }));
   return {
     paths,
     fallback: "blocking",
@@ -39,7 +39,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
     props: {
       post,
     },
-    revalidate: 60,
+    revalidate: 3600,
   };
 };
 

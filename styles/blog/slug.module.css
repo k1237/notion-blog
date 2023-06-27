@@ -3,7 +3,7 @@
 }
 
 #slug h3{
-    margin-top: 5%;
+    margin:2.5% 0;
 }
 
 #slug a{
@@ -16,4 +16,8 @@
 
 #slug pre{
     margin-top:3%;
+}
+
+#slug hr{
+    margin:1% 0;
 }

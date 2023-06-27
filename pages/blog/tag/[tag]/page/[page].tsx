@@ -14,7 +14,7 @@ import CustomHead from "@/components/parts/CustomHead";
 export const getStaticPaths: GetStaticPaths = async () => {
   const allTags = await getAllTags();
   const paths = await Promise.all(
-    allTags.map(async (tag: string) => {
+    (allTags as string[]).map(async (tag: string) => {
       const numberOfPageByTag = await getNumberOfPagesByTag(tag);
       return [...Array(numberOfPageByTag)].map((_, index) => ({
         params: { tag: tag, page: (index + 1).toString() },
@@ -44,7 +44,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       currentTag,
       allTags,
     },
-    revalidate: 60,
+    revalidate: 3600,
   };
 };
 

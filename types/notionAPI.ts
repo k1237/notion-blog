@@ -1,3 +1,12 @@
+export interface Post {
+  date: string;
+  description: string;
+  id: string;
+  slug: string;
+  tags: string[];
+  title: string;
+};
+
 export interface SingePost  {
   title: string;
   date: string;
